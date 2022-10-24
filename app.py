@@ -1,5 +1,4 @@
 
-
 from flask import Flask, request
 from datetime import datetime
 import json
@@ -7,8 +6,14 @@ import requests
 app = Flask(__name__)
 app.debug = True
 
+@app.route('/')
+def studentNumber():
+    dictionary=  {"Student Number" : "200525033"}
+    return json.dumps(dictionary)
 
-@app.route('/webhook', methods=['POST' , 'GET'])
+
+
+@app.route('/webhook', methods=['POST'])
 def index():
     body = request.json
     city = body['queryResult']['parameters']['geo-city']

@@ -29,7 +29,7 @@ def index():
     utchour = int(datetime.utcfromtimestamp(td).strftime('%H'))
     dawnhour = utchour-4
     str_dawnhour = str(dawnhour)
-    reply = '{"fulfillmentMessages": [ {"text": {"text": ["The temperature in ' + city +',  is  '+ temp + ' and the sunrise time is ' + str_dawnhour + ' AM."] } } ] }'
+    reply = '{"fulfillmentMessages": [ {"text": {"text": ["The temperature in ' + city +',  is  '+ temp + ' and the sunset time is ' + str_dawnhour + ' AM."] } } ] }'
     return reply
 
 if __name__ == '__main__':
